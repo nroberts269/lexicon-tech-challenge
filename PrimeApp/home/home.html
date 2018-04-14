@@ -1,0 +1,15 @@
+﻿<div class="loading-overlay" ng-show="model.isLoading">
+    <div>
+        <div>Loading Prime List</div>
+        <div class="text-sm">One moment please...</div>
+    </div>
+</div>
+<form name="homeForm" ng-submit="submit(homeForm.$valid)" novalidate>
+    <input type="number" id="max" name="max" ng-model="model.max" required min="1" max="2147483647" />
+    <button type="submit">Generate Prime List</button>
+    <p ng-show="homeForm.max.$invalid && !homeForm.max.$pristine" class="error-block">Please enter an integer between 1 and 2147483647.</p>
+    
+    <div class="primes-list">
+        <prime-item ng-repeat="prime in model.primes" prime="prime"></prime-item>
+    </div>
+</form>

@@ -1,0 +1,7 @@
+﻿<div ng-if="$ctrl.prime.isLoading">&bull; {{$ctrl.prime.value}} - checking...</div>
+<div ng-if="!$ctrl.prime.isLoading && !$ctrl.prime.error" ng-class="{'is-prime':$ctrl.prime.isPrime, 'is-not-prime':!$ctrl.prime.isPrime}">
+    &bull; {{$ctrl.prime.value}} - {{$ctrl.prime.isPrime ? 'prime' : 'not prime'}}
+</div>
+<div ng-if="!$ctrl.prime.isLoading && $ctrl.prime.error" class="is-not-prime">
+    &bull; {{$ctrl.prime.value}} - unable to check is prime
+</div>
